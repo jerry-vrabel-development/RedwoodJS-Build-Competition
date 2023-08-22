@@ -13,9 +13,11 @@ import DefaultLayout from 'src/layouts/DefaultLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/contact" page={ContactPage} name="contact" />
       <Set wrap={DefaultLayout}>
-      <Route path="/about" page={AboutPage} name="about" />
       <Route path="/" page={HomePage} name="home" />
+      <Route path="/about" page={AboutPage} name="about" />
+      <Route path="/contact" page={ContactPage} name="contact" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
