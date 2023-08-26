@@ -30,6 +30,8 @@ The Build Competition is a part of the RedwoodJS Conference, September 2023
 
 ## Introduction
 
+https://redwood-build-competition.netlify.app/
+
 ## Table Of Contents:
 
 - [💻 Application Overview](docs/application-overview.md)
