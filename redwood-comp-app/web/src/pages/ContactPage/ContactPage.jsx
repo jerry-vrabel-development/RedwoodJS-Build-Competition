@@ -28,46 +28,60 @@ const ContactPage = () => {
       <MetaTags title="Contact" description="Contact page" />
 
       <Toaster />
-      <Form
-         onSubmit={onSubmit}
-         config={{ mode: 'onBlur' }}
-         error={error}
-         formMethods={formMethods}
-      >
-      <FormError error={error} wrapperClassName="form-error" />
+      <div className="container mx-auto mt-6 p-4">
+        <Form
+          onSubmit={onSubmit}
+          config={{ mode: 'onBlur' }}
+          error={error}
+          formMethods={formMethods}
+          className="bg-white p-6 shadow-md rounded"
+        >
+          <FormError error={error} wrapperClassName="form-error mb-4 text-red-500" />
 
-      <Label name="name" errorClassName="error">Name</Label>
-        <TextField 
-          name="name" 
-          validation={{required: true}}
-          errorClassName="error" 
-        />
-        <FieldError name="name" errorClassName="error" />
+          <div className="mb-4">
+            <Label name="name" errorClassName="text-red-500">Name</Label>
+            <TextField 
+              name="name"
+              validation={{required: true}}
+              className="mt-1 p-2 w-full border rounded"
+              errorClassName="border-red-500" 
+            />
+            <FieldError name="name" errorClassName="mt-1 text-red-500 text-sm" />
+          </div>
 
-        <Label name="email">Email</Label>
-        <TextField
-          name="email"
-          validation={{
-            required: true,
-            pattern: {
-              value: /^[^@]+@[^.]+\..+$/,
-              message: 'Please enter a valid email address',
-            },
-          }}
-          errorClassName="error"
-        />
-        <FieldError name="email" errorClassName="error" />
+          <div className="mb-4">
+            <Label name="email" errorClassName="text-red-500">Email</Label>
+            <TextField
+              name="email"
+              validation={{
+                required: true,
+                pattern: {
+                  value: /^[^@]+@[^.]+\..+$/,
+                  message: 'Please enter a valid email address',
+                },
+              }}
+              className="mt-1 p-2 w-full border rounded"
+              errorClassName="border-red-500"
+            />
+            <FieldError name="email" errorClassName="mt-1 text-red-500 text-sm" />
+          </div>
 
-        <Label name="message">Message</Label>
-        <TextAreaField
-          name="message"
-          validation={{required: true}}
-          errorClassName="error"
-        />
-        <FieldError name="message" errorClassName="error"/>
+          <div className="mb-4">
+            <Label name="message" errorClassName="text-red-500">Message</Label>
+            <TextAreaField
+              name="message"
+              validation={{required: true}}
+              className="mt-1 p-2 w-full border rounded"
+              errorClassName="border-red-500"
+            />
+            <FieldError name="message" errorClassName="mt-1 text-red-500 text-sm"/>
+          </div>
 
-        <Submit disable={loading}>Save</Submit>
-      </Form>
+          <Submit disable={loading} className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition-colors duration-300">
+            Save
+          </Submit>
+        </Form>
+      </div>
     </>
   )
 }
