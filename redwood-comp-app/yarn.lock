@@ -12617,9 +12617,9 @@ __metadata:
   linkType: hard
 
 "headers-polyfill@npm:^3.1.0, headers-polyfill@npm:^3.1.2":
-  version: 3.1.2
-  resolution: "headers-polyfill@npm:3.1.2"
-  checksum: 147b2a7012cee01f8d5c6b94c184468204c9fa68b279b9784097cc1826cad7b0457332b7d5c3ad74c1cbe14daddd8009332382c3fdd3025d8a326633b3458968
+  version: 3.2.0
+  resolution: "headers-polyfill@npm:3.2.0"
+  checksum: 13c93e2c8c5eda0bd718b7fc4af2d1cbf4ad2cf7ac9c2fa91c130d26a5c582a05fca7ddde4c3a46c1afa4ab5040a018091432c3fac6daa228f4715252d776999
   languageName: node
   linkType: hard
 
