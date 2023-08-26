@@ -12,7 +12,7 @@ const AdminPage = () => {
       </p>
       <p>
         My default route is named <code>admin</code>, link to me with `
-        <Link to={routes.admin()}>Admin</Link>`
+        <Link to={routes.admin()}>Admin</Link>
       </p>
     </>
   );
