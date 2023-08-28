@@ -22,8 +22,5 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.6.1",
-  "dependencies": {
-    "react-spring": "^9.7.2"
-  }
+  "packageManager": "yarn@3.6.1"
 }

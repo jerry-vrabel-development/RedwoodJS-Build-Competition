@@ -1,5 +1,4 @@
 import dns from 'dns'
-
 import { defineConfig } from 'vite'
 
 // See: https://vitejs.dev/config/server-options.html#server-host
