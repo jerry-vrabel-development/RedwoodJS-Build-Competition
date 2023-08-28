@@ -12,10 +12,26 @@ const viteConfig = {
   plugins: [
     redwood(),
     VitePWA({
+      registerType: 'autoUpdate',
+      injectRegister: 'auto',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+      },
+      devOptions: {
+        enabled: true
+      },
       manifest: {
+        name: 'Redwood Comp App',
+        short_name: 'RCA',
+        description: 'RedwoodJS Build Competition App',
         icons: [
           {
-            src: "/icons/512.png",
+            src: 'pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: "pwa-512x512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable"
