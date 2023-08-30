@@ -3468,13 +3468,13 @@ __metadata:
   linkType: hard
 
 "@humanwhocodes/config-array@npm:^0.11.10":
-  version: 0.11.10
-  resolution: "@humanwhocodes/config-array@npm:0.11.10"
+  version: 0.11.11
+  resolution: "@humanwhocodes/config-array@npm:0.11.11"
   dependencies:
     "@humanwhocodes/object-schema": ^1.2.1
     debug: ^4.1.1
     minimatch: ^3.0.5
-  checksum: 9e307a49a5baa28beb243d2c14c145f288fccd6885f4c92a9055707057ec40980242256b2a07c976cfa6c75f7081da111a40a9844d1ca8daeff2302f8b640e76
+  checksum: 4195f68e485f7d1a7c95cf0f126cc41f7223eeda2f1b46b893123c99b35bb76145c37d25e2ba452d54815ed69bb656c0ce9e343ffa984470c08afa6e82a4713f
   languageName: node
   linkType: hard
 
@@ -6086,7 +6086,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/set-cookie-parser@npm:^2.4.0":
+"@types/set-cookie-parser@npm:^2.4.0, @types/set-cookie-parser@npm:^2.4.3":
   version: 2.4.3
   resolution: "@types/set-cookie-parser@npm:2.4.3"
   dependencies:
@@ -10461,9 +10461,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.477":
-  version: 1.4.504
-  resolution: "electron-to-chromium@npm:1.4.504"
-  checksum: c11d6688620f43c4b217137da0109892efae50213db92dd75242af10715c5b863ff7f93f75d020b532f42d1a88b2f7aa62872e772254e61a3456d21221f014a6
+  version: 1.4.505
+  resolution: "electron-to-chromium@npm:1.4.505"
+  checksum: be2bc3fbbd80bc0f4897c03c8327eb3f0a5666a3b91328b435552e0ec304760171989e36a90c8e4e4b498cc9b13861a24c2b714c3796555ac055d3c69817ddaa
   languageName: node
   linkType: hard
 
@@ -11997,9 +11997,9 @@ __metadata:
   linkType: hard
 
 "fraction.js@npm:^4.2.0":
-  version: 4.2.1
-  resolution: "fraction.js@npm:4.2.1"
-  checksum: d374ea23874651189b6f78c1fd39079e8da0a7181fc594cd48d5935b5c59119cee28408f86adeb327ca690555f2b8d316812ff41498123969cb09ee78c99d19c
+  version: 4.3.1
+  resolution: "fraction.js@npm:4.3.1"
+  checksum: f6c7a38f9cba8d10df6515bd2da7e112a511c20253571f1bba36b29251d83bed485cc1f220b681c815739a280ba5596a766cdce3478d90da5e007f73aca55e04
   languageName: node
   linkType: hard
 
@@ -12792,9 +12792,12 @@ __metadata:
   linkType: hard
 
 "headers-polyfill@npm:^3.1.0, headers-polyfill@npm:^3.1.2":
-  version: 3.2.0
-  resolution: "headers-polyfill@npm:3.2.0"
-  checksum: 13c93e2c8c5eda0bd718b7fc4af2d1cbf4ad2cf7ac9c2fa91c130d26a5c582a05fca7ddde4c3a46c1afa4ab5040a018091432c3fac6daa228f4715252d776999
+  version: 3.2.1
+  resolution: "headers-polyfill@npm:3.2.1"
+  dependencies:
+    "@types/set-cookie-parser": ^2.4.3
+    set-cookie-parser: ^2.6.0
+  checksum: 344820c70a34f6023426dc57822d7e0d0b87712a721e3ea8dc80b2c6c78ed551617f607008ace369fd79bf7088c4d91fca35269a88cd264357b128c92b2aced9
   languageName: node
   linkType: hard
 
@@ -13971,15 +13974,15 @@ __metadata:
   linkType: hard
 
 "jackspeak@npm:^2.0.3":
-  version: 2.3.0
-  resolution: "jackspeak@npm:2.3.0"
+  version: 2.3.1
+  resolution: "jackspeak@npm:2.3.1"
   dependencies:
     "@isaacs/cliui": ^8.0.2
     "@pkgjs/parseargs": ^0.11.0
   dependenciesMeta:
     "@pkgjs/parseargs":
       optional: true
-  checksum: 9451bea8ff7e9d666cc1e23cee8327125cfd96089821ea850ce10f7deb3e3880cdee839c829b38fa2cf9e10234d863256fa0f9b514492692db8b00758234f7ab
+  checksum: b26fbe8eee83be02a7efd19794419f2c4d795557597bf55e768df87e7f1570b6a636ee407d5d7952e3da1be9e5330fbab38a2e7ffe2251b0be9c3fc128f35a0b
   languageName: node
   linkType: hard
 
@@ -17603,13 +17606,13 @@ __metadata:
   linkType: hard
 
 "postcss@npm:^8.2.14, postcss@npm:^8.4.21, postcss@npm:^8.4.23, postcss@npm:^8.4.24, postcss@npm:^8.4.27, postcss@npm:^8.4.28":
-  version: 8.4.28
-  resolution: "postcss@npm:8.4.28"
+  version: 8.4.29
+  resolution: "postcss@npm:8.4.29"
   dependencies:
     nanoid: ^3.3.6
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 7dc843c26fec9d26a6f3abae3525c160de2fb22ee2163ac3f1fdb15a5651342893e38ffd6c26fddac8e42c9aa629dc80ea20bf5a796c954150cf9295adf8b09c
+  checksum: b50b7ad4ac6c9ba029eda4381863570b7aed2672ffae2566ef109e556bae01823a51180409877ff2cce1fe186025751c7191c301eafc07b0d90c630ab5e0365c
   languageName: node
   linkType: hard
 
@@ -17636,24 +17639,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.5.3":
-  version: 0.5.3
-  resolution: "prettier-plugin-tailwindcss@npm:0.5.3"
+"prettier-plugin-tailwindcss@npm:0.4.1":
+  version: 0.4.1
+  resolution: "prettier-plugin-tailwindcss@npm:0.4.1"
   peerDependencies:
     "@ianvs/prettier-plugin-sort-imports": "*"
     "@prettier/plugin-pug": "*"
     "@shopify/prettier-plugin-liquid": "*"
     "@shufo/prettier-plugin-blade": "*"
     "@trivago/prettier-plugin-sort-imports": "*"
-    prettier: ^3.0
+    prettier: ^2.2 || ^3.0
     prettier-plugin-astro: "*"
     prettier-plugin-css-order: "*"
     prettier-plugin-import-sort: "*"
     prettier-plugin-jsdoc: "*"
+    prettier-plugin-marko: "*"
     prettier-plugin-organize-attributes: "*"
     prettier-plugin-organize-imports: "*"
     prettier-plugin-style-order: "*"
     prettier-plugin-svelte: "*"
+    prettier-plugin-twig-melody: "*"
   peerDependenciesMeta:
     "@ianvs/prettier-plugin-sort-imports":
       optional: true
@@ -17685,7 +17690,7 @@ __metadata:
       optional: true
     prettier-plugin-twig-melody:
       optional: true
-  checksum: b0d57aca64eb6608c8606fac2f607be9cb4fa89c313ce71ebaaea7834425525eff4f09f0890152a441deccba9f58e280d7e17c503fb241c42764062223689b93
+  checksum: da9dc4c8c80b5510d51e671de61bc230e2b076bd4c14ddd3e8bd4fa5395373800d10473718bbf22e1cabe09167e8d2eb1bedaa06587ee905d6e6106003b69d11
   languageName: node
   linkType: hard
 
@@ -18821,7 +18826,7 @@ __metadata:
   dependencies:
     "@redwoodjs/auth-dbauth-setup": 6.1.0
     "@redwoodjs/core": 6.1.0
-    prettier-plugin-tailwindcss: ^0.5.3
+    prettier-plugin-tailwindcss: 0.4.1
     vite-plugin-pwa: ^0.16.4
   languageName: unknown
   linkType: soft
@@ -19171,7 +19176,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"set-cookie-parser@npm:^2.4.1, set-cookie-parser@npm:^2.4.6":
+"set-cookie-parser@npm:^2.4.1, set-cookie-parser@npm:^2.4.6, set-cookie-parser@npm:^2.6.0":
   version: 2.6.0
   resolution: "set-cookie-parser@npm:2.6.0"
   checksum: 739da029f0e56806a103fcd5501d9c475e19e77bd8274192d7ae5c374ae714a82bba9a7ac00b0330a18227c5644b08df9e442240527be578f5a6030f9bb2bb80
@@ -20312,8 +20317,8 @@ __metadata:
   linkType: hard
 
 "terser@npm:^5.0.0, terser@npm:^5.10.0, terser@npm:^5.16.8":
-  version: 5.19.2
-  resolution: "terser@npm:5.19.2"
+  version: 5.19.3
+  resolution: "terser@npm:5.19.3"
   dependencies:
     "@jridgewell/source-map": ^0.3.3
     acorn: ^8.8.2
@@ -20321,7 +20326,7 @@ __metadata:
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: 95817b86619af33d8d143d7ae02dfcd9ac2cf4ea5b5cb7b208aaccff4cdc5594893960a4c3dcdac09863ebd43e2835ab173997041790aa77092c1d31ff40c95a
+  checksum: 959d0c96552e2bcfcb2ff092295453b5163769184bbbc6ecf0e0f1c59d472a45601f1a10f9820396ac4a3facfa1a101443324d2576f75756b4c5966cef6d6408
   languageName: node
   linkType: hard
 
@@ -21516,6 +21521,7 @@ __metadata:
     "@redwoodjs/vite": 6.1.0
     "@redwoodjs/web": 6.1.0
     autoprefixer: ^10.4.15
+    humanize-string: 2.1.0
     postcss: ^8.4.28
     postcss-loader: ^7.3.3
     prop-types: 15.8.1
