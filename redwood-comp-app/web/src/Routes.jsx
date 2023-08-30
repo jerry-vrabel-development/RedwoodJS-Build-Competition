@@ -17,6 +17,18 @@ import { useAuth } from './auth'
 const Routes = () => {
   return (
     <Router useAuth={useAuth}>
+    <Set wrap={ScaffoldLayout} title="Appointments" titleTo="appointments" buttonLabel="New Appointment" buttonTo="newAppointment">
+    <Route path="/appointments/new" page={AppointmentNewAppointmentPage} name="newAppointment" />
+    <Route path="/appointments/{id:Int}/edit" page={AppointmentEditAppointmentPage} name="editAppointment" />
+    <Route path="/appointments/{id:Int}" page={AppointmentAppointmentPage} name="appointment" />
+    <Route path="/appointments" page={AppointmentAppointmentsPage} name="appointments" />
+    </Set>
+    <Set wrap={ScaffoldLayout} title="Profiles" titleTo="profiles" buttonLabel="New Profile" buttonTo="newProfile">
+    <Route path="/profiles/new" page={ProfileNewProfilePage} name="newProfile" />
+    <Route path="/profiles/{id:Int}/edit" page={ProfileEditProfilePage} name="editProfile" />
+    <Route path="/profiles/{id:Int}" page={ProfileProfilePage} name="profile" />
+    <Route path="/profiles" page={ProfileProfilesPage} name="profiles" />
+    </Set>
     <Private unauthenticated="login" roles="admin">
     <Set wrap={DefaultLayout} title="Users" titleTo="users" buttonLabel="New User" buttonTo="newUser">
     <Route path="/users/new" page={UserNewUserPage} name="newUser" />
