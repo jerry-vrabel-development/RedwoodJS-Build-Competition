@@ -27,7 +27,7 @@ const Nav = () => {
               Redwood
             </Link>
           </h1>
-          <Link to={routes.home()} className="hover:underline">
+          <Link to={routes.home()} className="">
             <HomeIcon className="h-6 w-6 text-blue-500" />
             Home
           </Link>
@@ -46,9 +46,12 @@ const Nav = () => {
             <ChatBubbleLeftIcon className="h-6 w-6" />
             Contact
           </Link>
-          <Link to={routes.newProfile()} className="">
-            Profile
-          </Link>
+          {isAuthenticated && (
+            <Link to={routes.profile({ id: currentUser.id })} className="">
+              <UserCircleIcon className="h-6 w-6" />
+              Profile
+            </Link>
+          )}
         </div>
 
         {isAuthenticated && currentUser ? (
