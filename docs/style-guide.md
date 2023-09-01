@@ -2,9 +2,43 @@
 
 ## 1. Introduction
 
-Start by explaining the purpose of the style guide, its intended audience, and how to use it. This is especially helpful for new designers or developers joining your team.
+### Purpose
+
+The purpose of this style guide is to create a unified and consistent visual and interactive experience for our web application. By adhering to the guidelines and standards set out in this document, we aim to ensure that the brand identity remains cohesive throughout the platform. Furthermore, it acts as a reference point for design decisions, reducing ambiguity and fostering a collaborative environment for both designers and developers.
+
+### Intended Audience
+
+This guide is intended for:
+
+- **Designers**: To assist in creating visuals and user interfaces that align with the brand's established norms.
+- **Developers**: To provide clear direction on implementing design elements, understanding spacing, typography, and color schemes.
+- **Content Creators**: To understand the tone, voice, and style of writing suited for the platform.
+- **Stakeholders & Product Managers**: To appreciate the design rationale and ensure the product aligns with the brand's vision.
+
+### How to Use This Guide
+
+1. **Familiarize Yourself**: Before diving into a project, take some time to go through the guide to understand the overarching design philosophy.
+2. **Reference Regularly**: As you work, refer back to ensure that each design or development decision adheres to the guidelines.
+3. **Provide Feedback**: The style guide is a living document. As the web application evolves, so should the guide. If you find areas that can be improved or if there are inconsistencies, raise them so the guide can be updated.
+4. **Collaborate**: Use this guide as a point of discussion. If there are any doubts or multiple interpretations of a guideline, discuss with the team to ensure a unified approach.
 
 ## 2. Brand Identity
+
+### Vision Statement
+
+"Empowering the global labor movement through a unified digital hub, promoting solidarity, and advancing the rights and voices of workers everywhere."
+
+### Mission Statement
+
+"We are committed to creating a centralized platform that consolidates the myriad of labor unions, their vital activities, news, campaigns, and membership intricacies. We bridge the gap between workers seeking to join a union, current union members, and the broader public. Our mission is to amplify the essence of the labor movement, fostering seamless communication, and rallying robust support."
+
+### Core Values
+
+- **Solidarity**: We believe in the collective strength of workers and the power of unions coming together as one.
+- **Transparency**: Open and honest communication is the backbone of our platform, ensuring every union and its members have a clear understanding of ongoing activities and campaigns.
+- **Empowerment**: By providing the necessary tools, resources, and information, we aim to empower workers and unions to make informed decisions and actions.
+- **Inclusivity**: Our platform champions diversity and is committed to being a space where every worker, irrespective of their background, feels seen, heard, and represented.
+- **Advocacy**: We are not just a platform; we're advocates for workers' rights and the labor movement's importance in shaping a just and equitable society.
 
 ### Logo Usage
 
