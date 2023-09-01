@@ -14,53 +14,38 @@ const ProfileForm = (props) => {
   }
 
   return (
-    <div className="rw-form-wrapper">
-      <Form onSubmit={onSubmit} error={props.error}>
+    <div className="p-4 bg-white shadow-md rounded-md">
+      <Form onSubmit={onSubmit} error={props.error} className="space-y-4">
         <FormError
           error={props.error}
-          wrapperClassName="rw-form-error-wrapper"
-          titleClassName="rw-form-error-title"
-          listClassName="rw-form-error-list"
+          wrapperClassName="bg-red-50 p-4 rounded-md"
+          titleClassName="text-red-600 font-bold"
+          listClassName="list-disc pl-5 text-red-500"
         />
 
-        <Label
-          name="bio"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          Bio
-        </Label>
+        <div className="space-y-2">
+          <Label
+            name="bio"
+            className="block text-sm font-medium text-gray-700"
+            errorClassName="text-red-600"
+          >
+            Bio
+          </Label>
+          <TextField
+            name="bio"
+            defaultValue={props.profile?.bio}
+            className="mt-1 p-2 w-full border rounded-md"
+            errorClassName="border-red-600"
+            validation={{ required: true }}
+          />
+          <FieldError name="bio" className="text-red-600 text-sm" />
+        </div>
 
-        <TextField
-          name="bio"
-          defaultValue={props.profile?.bio}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="bio" className="rw-field-error" />
-
-        <Label
-          name="userId"
-          className="rw-label"
-          errorClassName="rw-label rw-label-error"
-        >
-          User id
-        </Label>
-
-        <NumberField
-          name="userId"
-          defaultValue={props.profile?.userId}
-          className="rw-input"
-          errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
-        />
-
-        <FieldError name="userId" className="rw-field-error" />
-
-        <div className="rw-button-group">
-          <Submit disabled={props.loading} className="rw-button rw-button-blue">
+        <div className="flex justify-end">
+          <Submit
+            disabled={props.loading}
+            className="py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
             Save
           </Submit>
         </div>

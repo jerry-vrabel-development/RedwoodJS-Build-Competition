@@ -1,28 +1,25 @@
-import { useRef } from 'react'
-import { useEffect } from 'react'
-
-import {
-  Form,
-  Label,
-  TextField,
-  PasswordField,
-  Submit,
-  FieldError,
-} from '@redwoodjs/forms'
+import { useRef, useEffect } from 'react'
+import { Form, Label, TextField, PasswordField, Submit, FieldError } from '@redwoodjs/forms'
 import { Link, navigate, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import { toast, Toaster } from '@redwoodjs/web/toast'
-
 import { useAuth } from 'src/auth'
 
 const LoginPage = () => {
-  const { isAuthenticated, logIn } = useAuth()
+  const { isAuthenticated, logIn, currentUser } = useAuth()
 
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate(routes.home())
+    if (isAuthenticated && currentUser) {
+      if (currentUser.roles && currentUser.roles.includes('admin')) {
+        navigate(routes.admin())
+      } else if (currentUser.profile) {  // This assumes you have a 'profile' field to check.
+        navigate(routes.profile({ id: currentUser.id }))
+      } else {
+        navigate(routes.newProfile())
+      }
     }
-  }, [isAuthenticated])
+  }, [isAuthenticated, currentUser])
+
 
   const usernameRef = useRef(null)
   useEffect(() => {
@@ -48,80 +45,62 @@ const LoginPage = () => {
     <>
       <MetaTags title="Login" />
 
-      <main className="rw-main">
+      <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8">
         <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
-        <div className="rw-scaffold rw-login-container">
-          <div className="rw-segment">
-            <header className="rw-segment-header">
-              <h2 className="rw-heading rw-heading-secondary">Login</h2>
-            </header>
-
-            <div className="rw-segment-main">
-              <div className="rw-form-wrapper">
-                <Form onSubmit={onSubmit} className="rw-form-wrapper">
-                  <Label
-                    name="username"
-                    className="rw-label"
-                    errorClassName="rw-label rw-label-error"
-                  >
-                    Username
-                  </Label>
-                  <TextField
-                    name="username"
-                    className="rw-input"
-                    errorClassName="rw-input rw-input-error"
-                    ref={usernameRef}
-                    validation={{
-                      required: {
-                        value: true,
-                        message: 'Username is required',
-                      },
-                    }}
-                  />
-
-                  <FieldError name="username" className="rw-field-error" />
-
-                  <Label
-                    name="password"
-                    className="rw-label"
-                    errorClassName="rw-label rw-label-error"
-                  >
-                    Password
-                  </Label>
-                  <PasswordField
-                    name="password"
-                    className="rw-input"
-                    errorClassName="rw-input rw-input-error"
-                    autoComplete="current-password"
-                    validation={{
-                      required: {
-                        value: true,
-                        message: 'Password is required',
-                      },
-                    }}
-                  />
-
-                  <div className="rw-forgot-link">
-                    <Link
-                      to={routes.forgotPassword()}
-                      className="rw-forgot-link"
-                    >
-                      Forgot Password?
-                    </Link>
-                  </div>
-
-                  <FieldError name="password" className="rw-field-error" />
-
-                  <div className="rw-button-group">
-                    <Submit className="rw-button rw-button-blue">Login</Submit>
-                  </div>
-                </Form>
-              </div>
-            </div>
+        <div className="max-w-md w-full space-y-8">
+          <div>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
           </div>
-          <div className="rw-login-link">
-            <span>Don&apos;t have an account?</span>{' '}
-            <Link to={routes.signup()} className="rw-link">
+          <div className="bg-white p-8 rounded shadow-lg">
+            <Form onSubmit={onSubmit} className="space-y-6">
+              <div>
+                <Label name="username" className="block text-sm font-medium text-gray-700">Username</Label>
+                <TextField
+                  name="username"
+                  className="mt-1 p-2 w-full border rounded-md"
+                  ref={usernameRef}
+                  validation={{
+                    required: {
+                      value: true,
+                      message: 'Username is required',
+                    },
+                  }}
+                />
+                <FieldError name="username" className="text-red-600 mt-1" />
+              </div>
+
+              <div>
+                <Label name="password" className="block text-sm font-medium text-gray-700">Password</Label>
+                <PasswordField
+                  name="password"
+                  className="mt-1 p-2 w-full border rounded-md"
+                  autoComplete="current-password"
+                  validation={{
+                    required: {
+                      value: true,
+                      message: 'Password is required',
+                    },
+                  }}
+                />
+                <FieldError name="password" className="text-red-600 mt-1" />
+
+                <div className="text-right">
+                  <Link to={routes.forgotPassword()} className="text-sm text-blue-500 hover:underline">
+                    Forgot Password?
+                  </Link>
+                </div>
+              </div>
+
+              <div>
+                <Submit className="w-full p-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                  Login
+                </Submit>
+              </div>
+            </Form>
+          </div>
+          <div className="text-center">
+            <span className="text-gray-600">Don&apos;t have an account?</span>
+            <Link to={routes.signup()} className="ml-1 text-blue-500 hover:underline">
               Sign up!
             </Link>
           </div>
