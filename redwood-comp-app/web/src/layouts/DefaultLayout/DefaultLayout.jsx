@@ -1,5 +1,6 @@
 import { useAuth } from 'src/auth'
 import Nav from 'src/components/Nav/Nav'
+import Footer from 'src/components/Footer/Footer'
 
 const DefaultLayout = ({ children }) => {
   const { isAuthenticated, currentUser, logOut } = useAuth()
@@ -10,7 +11,8 @@ const DefaultLayout = ({ children }) => {
       <Nav />
     </header>
     <main className="container mx-auto mt-6 p-4">{children}</main>
-      </>
+    <Footer />
+  </>
   )
 }
 
