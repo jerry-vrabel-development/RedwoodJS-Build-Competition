@@ -22,32 +22,27 @@ const Nav = () => {
     <header className="bg-blue-600 p-4 text-white">
       <div className="container mx-auto flex items-center justify-between ">
         <div className="flex items-center space-x-4">
-          <h1 className="flex items-center text-xl font-bold">
-            <Link to={routes.home()} className="flex items-center">
-              Redwood
-            </Link>
-          </h1>
-          <Link to={routes.home()} className="">
+          <Link to={routes.home()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
             <HomeIcon className="h-6 w-6 text-blue-500" />
             Home
           </Link>
 
           {isAdmin && (
-            <Link to={routes.admin()} className="">
+            <Link to={routes.admin()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
               <UserGroupIcon className="h-6 w-6" /> Admin
             </Link>
           )}
 
-          <Link to={routes.about()} className="">
+          <Link to={routes.about()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
             <InformationCircleIcon className="h-6 w-6" />
             About
           </Link>
-          <Link to={routes.contact()} className="">
+          <Link to={routes.contact()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
             <ChatBubbleLeftIcon className="h-6 w-6" />
             Contact
           </Link>
           {isAuthenticated && (
-            <Link to={routes.profile({ id: currentUser.id })} className="">
+            <Link to={routes.profile({ id: currentUser.id })} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
               <UserCircleIcon className="h-6 w-6" />
               Profile
             </Link>
@@ -63,7 +58,7 @@ const Nav = () => {
             <button
               type="button"
               onClick={logOut}
-              className="rounded bg-red-500 px-4 py-2  transition-colors duration-300 hover:bg-red-700"
+              className="rounded text-blue-800 bg-orange-100 px-4 py-2  transition-colors duration-300 hover:bg-orange-700"
             >
               Logout
             </button>
@@ -72,7 +67,7 @@ const Nav = () => {
           <Link to={routes.login()}>
             <button
               type="button"
-              className="rounded bg-orange-500 px-4 py-2 transition-colors duration-300 hover:bg-orange-700"
+              className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100"
             >
               Login
             </button>
