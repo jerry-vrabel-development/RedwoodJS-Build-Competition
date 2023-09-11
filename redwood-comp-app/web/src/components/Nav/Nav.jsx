@@ -56,8 +56,8 @@ const Nav = () => {
 
         {isAuthenticated && currentUser ? (
           <div className="flex items-center space-x-4">
-            <span className="flex items-center space-x-2">
-              <UserCircleIcon className="h-6 w-6" />
+            <span className="flex items-center space-x-2 mr-2">
+              <UserCircleIcon className="h-6 w-6 mr-4 mt-1" />
               Logged in as {currentUser.roles}
             </span>
             <button
