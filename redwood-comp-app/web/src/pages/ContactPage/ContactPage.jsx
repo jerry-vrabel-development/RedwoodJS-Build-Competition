@@ -28,7 +28,7 @@ const ContactPage = () => {
       <MetaTags title="Contact" description="Contact page" />
 
       <Toaster />
-      <div className="container mx-auto mt-6 p-4">
+      <div className="min-h-screen container mx-auto mt-6 p-4">
         <Form
           onSubmit={onSubmit}
           config={{ mode: 'onBlur' }}
@@ -40,11 +40,11 @@ const ContactPage = () => {
 
           <div className="mb-4">
             <Label name="name" errorClassName="text-red-500">Name</Label>
-            <TextField 
+            <TextField
               name="name"
               validation={{required: true}}
               className="mt-1 p-2 w-full border rounded"
-              errorClassName="border-red-500" 
+              errorClassName="border-red-500"
             />
             <FieldError name="name" errorClassName="mt-1 text-red-500 text-sm" />
           </div>
