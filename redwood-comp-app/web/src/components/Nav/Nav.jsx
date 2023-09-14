@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   HomeIcon,
   UserGroupIcon,
@@ -22,6 +23,7 @@ const Nav = () => {
     <header className="bg-blue-600 p-4 text-white">
       <div className="container mx-auto flex items-center justify-between ">
         <div className="flex items-center space-x-4">
+
           <Link to={routes.home()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
             <HomeIcon className="h-6 w-6 text-blue-500" />
             Home
