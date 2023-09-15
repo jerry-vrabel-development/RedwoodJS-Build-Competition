@@ -45,16 +45,16 @@ const LoginPage = () => {
     <>
       <MetaTags title="Login" />
 
-      <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4 sm:px-6 lg:px-8">
+      <main className="min-h-screen flex items-center justify-center bg-blue-100 px-4 sm:px-6 lg:px-8">
         <Toaster toastOptions={{ className: 'rw-toast', duration: 6000 }} />
         <div className="max-w-md w-full space-y-8">
           <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to your account</h2>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-blue-900">Sign in to your account</h2>
           </div>
           <div className="bg-white p-8 rounded shadow-lg">
             <Form onSubmit={onSubmit} className="space-y-6">
               <div>
-                <Label name="username" className="block text-sm font-medium text-gray-700">Username</Label>
+                <Label name="username" className="block text-sm font-medium text-blue-700">Username</Label>
                 <TextField
                   name="username"
                   className="mt-1 p-2 w-full border rounded-md"
@@ -70,7 +70,7 @@ const LoginPage = () => {
               </div>
 
               <div>
-                <Label name="password" className="block text-sm font-medium text-gray-700">Password</Label>
+                <Label name="password" className="block text-sm font-medium text-blue-700">Password</Label>
                 <PasswordField
                   name="password"
                   className="mt-1 p-2 w-full border rounded-md"
