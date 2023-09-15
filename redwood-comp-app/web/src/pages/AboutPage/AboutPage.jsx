@@ -3,19 +3,16 @@ import { MetaTags } from '@redwoodjs/web'
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center p-5">
+    <>
       <MetaTags title="About" description="About page" />
-
-      <div className="bg-white shadow-xl rounded-lg p-8 max-w-lg mx-auto">
-        <h2 className="text-2xl font-bold mb-6 text-gray-800">About Us</h2>
-        <p className="text-gray-600 mb-8">
-          This site was created to demonstrate my mastery of Redwood: Look on my
-          works, ye mighty, and despair!
-        </p>
-        <Link to={routes.home()} className="text-teal-600 hover:text-teal-800 underline">Return home</Link>
-      </div>
-    </div>
+        <div className="min-h-screen bg-blue-100 p-6">
+        <header className="mb-6">
+          <h1 className="text-2xl font-bold">About Title</h1>header
+        </header>
+          <section className="mb-6">section</section>
+        </div>
+    </>
   )
 }
 
-export default AboutPage;
+export default AboutPage
