@@ -28,7 +28,13 @@ const ContactPage = () => {
       <MetaTags title="Contact" description="Contact page" />
 
       <Toaster />
-      <div className="min-h-screen container mx-auto mt-6 p-4">
+      <div className="min-h-screen bg-blue-100 p-6">
+      <header className="mb-6">
+        <h1 className="text-2xl font-bold">Contact Us</h1>
+      </header>
+      <section className="mb-6">
+        <p className="text-lg">llama</p>
+      </section>
         <Form
           onSubmit={onSubmit}
           config={{ mode: 'onBlur' }}
