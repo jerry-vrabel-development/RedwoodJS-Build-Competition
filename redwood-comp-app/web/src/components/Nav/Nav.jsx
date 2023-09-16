@@ -12,6 +12,7 @@ import { Link, routes } from '@redwoodjs/router'
 import { useAuth } from 'src/auth'
 
 const Nav = () => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isAuthenticated, currentUser, logOut } = useAuth()
   const isAdmin =
     isAuthenticated &&
@@ -20,63 +21,114 @@ const Nav = () => {
     currentUser.roles.includes('admin')
 
   return (
-    <header className="bg-blue-600 p-4 text-white">
-      <div className="container mx-auto flex items-center justify-between ">
-        <div className="flex items-center space-x-4">
+    <nav className="bg-white shadow-lg">
+      <div className="max-w-6xl mx-auto px-4">
+          <div className="flex justify-between">
+          <div className="flex space-x-4">
+              <ul className="hidden md:flex items-center space-x-4">
+                <Link to={routes.home()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+                  <HomeIcon className="h-6 w-6 text-blue-500" />
+                    Home
+                </Link>
 
-          <Link to={routes.home()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
-            <HomeIcon className="h-6 w-6 text-blue-500" />
-            Home
-          </Link>
+                {isAdmin && (
+                <Link to={routes.admin()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+                  <UserGroupIcon className="h-6 w-6" />
+                    Admin
+                </Link>
+                )}
 
-          {isAdmin && (
-            <Link to={routes.admin()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
-              <UserGroupIcon className="h-6 w-6" /> Admin
-            </Link>
-          )}
+                <Link to={routes.about()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+                  <InformationCircleIcon className="h-6 w-6" />
+                    About
+                </Link>
 
-          <Link to={routes.about()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
-            <InformationCircleIcon className="h-6 w-6" />
-            About
-          </Link>
-          <Link to={routes.contact()} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
-            <ChatBubbleLeftIcon className="h-6 w-6" />
-            Contact
-          </Link>
-          {isAuthenticated && (
-            <Link to={routes.profile({ id: currentUser.id })} className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100">
-              <UserCircleIcon className="h-6 w-6" />
-              Profile
-            </Link>
-          )}
-        </div>
+                <Link to={routes.contact()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+                  <ChatBubbleLeftIcon className="h-6 w-6" />
+                    Contact
+                </Link>
 
-        {isAuthenticated && currentUser ? (
-          <div className="flex items-center space-x-4">
-            <span className="flex items-center space-x-2 mr-2">
-              <UserCircleIcon className="h-6 w-6 mr-4 mt-1" />
-              Logged in as {currentUser.roles}
-            </span>
-            <button
-              type="button"
-              onClick={logOut}
-              className="rounded text-blue-800 bg-orange-100 px-4 py-2  transition-colors duration-300 hover:bg-orange-700"
-            >
-              Logout
+                {isAuthenticated && (
+                <Link to={routes.profile({ id: currentUser.id })} className="">
+                  <UserCircleIcon className="h-6 w-6" />
+                    Profile
+                </Link>
+                )}
+              </ul>
+            </div>
+
+            <div className="flex space-x-4">
+              <ul className="hidden md:flex items-center space-x-4">
+                {isAuthenticated && currentUser ? (
+                  <div className="flex items-center space-x-4">
+                    <span className="flex items-center space-x-2 mr-2">
+                    <UserCircleIcon className="h-6 w-6 mr-4 mt-1" />
+                      Logged in as {currentUser.roles}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={logOut}
+                      className="
+                        rounded
+                        text-blue-800
+                        bg-orange-100
+                        px-4
+                        py-2
+                        transition-colors
+                        duration-300
+                        hover:bg-orange-700"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                  ) : (
+                  <div className="flex items-center space-x-4">
+                    <Link to={routes.login()}>
+                      <button
+                        type="button"
+                        className=""
+                      >
+                        Login
+                      </button>
+                    </Link>
+                  </div>
+                  )}
+              </ul>
+            </div>
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
+                {/* SVG for Hamburger Menu */}
+                <svg xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="blue"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                >
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <line x1="4" y1="6" x2="20" y2="6"></line>
+                  <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
             </button>
           </div>
-        ) : (
-          <Link to={routes.login()}>
-            <button
-              type="button"
-              className="rounded text-blue-800 bg-orange-100 px-4 py-2 transition-colors duration-300 hover:bg-orange-400 hover:text-blue-100"
-            >
-              Login
-            </button>
+
+      {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? '' : 'hidden'} absolute w-80 bg-blue-100 z-10 md:hidden`}>
+          <Link to={routes.home()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+            <HomeIcon className="h-6 w-6" />
+              Home
           </Link>
-        )}
+          <Link to={routes.about()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+            <InformationCircleIcon className="h-6 w-6" />
+              About
+          </Link>
+        </div>
       </div>
-    </header>
+    </div>
+  </nav>
   )
 }
 
