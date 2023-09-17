@@ -21,29 +21,29 @@ const Nav = () => {
     currentUser.roles.includes('admin')
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-blue shadow-lg">
       <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-between">
           <div className="flex space-x-4">
-              <ul className="hidden md:flex items-center space-x-4">
-                <Link to={routes.home()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
-                  <HomeIcon className="h-6 w-6 text-blue-500" />
+              <ul className="hidden md:flex items-center text-blue-200 space-x-4">
+                <Link to={routes.home()} className="py-5 px-3  hover:text-gray-900">
+                  <HomeIcon className="h-6 w-6" />
                     Home
                 </Link>
 
                 {isAdmin && (
-                <Link to={routes.admin()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+                <Link to={routes.admin()} className="py-5 px-3  hover:text-gray-900">
                   <UserGroupIcon className="h-6 w-6" />
                     Admin
                 </Link>
                 )}
 
-                <Link to={routes.about()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+                <Link to={routes.about()} className="py-5 px-3  hover:text-gray-900">
                   <InformationCircleIcon className="h-6 w-6" />
                     About
                 </Link>
 
-                <Link to={routes.contact()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
+                <Link to={routes.contact()} className="py-5 px-3  hover:text-gray-900">
                   <ChatBubbleLeftIcon className="h-6 w-6" />
                     Contact
                 </Link>
@@ -58,7 +58,7 @@ const Nav = () => {
             </div>
 
             <div className="flex space-x-4">
-              <ul className="hidden md:flex items-center space-x-4">
+              <ul className="hidden md:flex items-center text-blue-800 space-x-4">
                 {isAuthenticated && currentUser ? (
                   <div className="flex items-center space-x-4">
                     <span className="flex items-center space-x-2 mr-2">
@@ -70,7 +70,6 @@ const Nav = () => {
                       onClick={logOut}
                       className="
                         rounded
-                        text-blue-800
                         bg-orange-100
                         px-4
                         py-2
@@ -82,7 +81,7 @@ const Nav = () => {
                     </button>
                   </div>
                   ) : (
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center text-blue-200 space-x-4">
                     <Link to={routes.login()}>
                       <button
                         type="button"
@@ -96,14 +95,14 @@ const Nav = () => {
               </ul>
             </div>
             {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
+            <div className="md:hidden z-10 flex items-center">
               <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
                 {/* SVG for Hamburger Menu */}
                 <svg xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-8 w-8 mb-6"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="blue"
+                stroke="white"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -116,15 +115,61 @@ const Nav = () => {
           </div>
 
       {/* Mobile Menu */}
-        <div className={`mobile-menu ${isMobileMenuOpen ? '' : 'hidden'} absolute w-80 bg-blue-100 z-10 md:hidden`}>
-          <Link to={routes.home()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
-            <HomeIcon className="h-6 w-6" />
-              Home
-          </Link>
-          <Link to={routes.about()} className="py-5 px-3 text-gray-700 hover:text-gray-900">
-            <InformationCircleIcon className="h-6 w-6" />
-              About
-          </Link>
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'absolute' : 'hidden'}  bg-blue-200 w-9/12 md:hidden`}>
+          <ul className="text-blue-800">
+            <Link to={routes.home()} className="block py-2 px-2 text-sm  text-blue-800 hover:text-gray-900 hover:bg-blue-900">
+              <HomeIcon className="h-4 w-4" />
+                Home
+            </Link>
+              {isAdmin && (
+            <Link to={routes.admin()} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+              <UserGroupIcon className="h-4 w-4" />
+                Admin
+            </Link>
+        )}
+
+        {isAuthenticated && (
+            <Link to={routes.profile({ id: currentUser.id })} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+              <UserCircleIcon className="h-4 w-4" />
+                Profile
+            </Link>
+        )}
+            <Link to={routes.about()} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+              <InformationCircleIcon className="h-4 w-4" />
+                About
+            </Link>
+            <Link to={routes.contact()} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+              <ChatBubbleLeftIcon className="h-4 w-4" />
+                Contact
+            </Link>
+        {isAuthenticated && currentUser ? (
+          <div className="block py-2 px-2 text-sm  hover:text-gray-900">
+            <UserCircleIcon className="h-4 w-4" />
+              Logged in as {currentUser.roles}
+                <button
+                  type="button"
+                  onClick={logOut}
+                  className="
+                    rounded
+                  bg-orange-100
+                    mt-2
+                    p-2
+                    transition-colors
+                    duration-300
+                    hover:bg-orange-700"
+                >
+                  Logout
+                </button>
+          </div>
+        ) : (
+          <div className="">
+            <Link to={routes.login()} className="block py-2 px-2 text-sm hover:text-gray-900">
+              <UserCircleIcon className="h-4 w-4" />
+                Login
+            </Link>
+          </div>
+            )}
+          </ul>
         </div>
       </div>
     </div>
