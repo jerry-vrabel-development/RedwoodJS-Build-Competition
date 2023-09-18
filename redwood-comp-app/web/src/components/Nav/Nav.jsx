@@ -50,7 +50,7 @@ const Nav = () => {
 
                 {isAuthenticated && (
                 <Link to={routes.profile({ id: currentUser.id })} className="">
-                  <UserCircleIcon className="h-6 w-6" />
+                  <UserCircleIcon className="h-6 w-6 hover:text-gray-900" />
                     Profile
                 </Link>
                 )}
@@ -58,7 +58,7 @@ const Nav = () => {
             </div>
 
             <div className="flex space-x-4">
-              <ul className="hidden md:flex items-center text-blue-800 space-x-4">
+              <ul className="hidden md:flex items-center text-blue-200 space-x-4">
                 {isAuthenticated && currentUser ? (
                   <div className="flex items-center space-x-4">
                     <span className="flex items-center space-x-2 mr-2">
@@ -70,7 +70,7 @@ const Nav = () => {
                       onClick={logOut}
                       className="
                         rounded
-                        bg-orange-100
+                        bg-blue-900
                         px-4
                         py-2
                         transition-colors
@@ -95,7 +95,7 @@ const Nav = () => {
               </ul>
             </div>
             {/* Mobile Menu Button */}
-            <div className="md:hidden z-10 flex items-center">
+            <div className="md:hidden z-10 block items-center">
               <button onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
                 {/* SVG for Hamburger Menu */}
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -117,28 +117,33 @@ const Nav = () => {
       {/* Mobile Menu */}
         <div className={`mobile-menu ${isMobileMenuOpen ? 'absolute' : 'hidden'}  bg-blue-200 w-9/12 md:hidden`}>
           <ul className="text-blue-800">
-            <Link to={routes.home()} className="block py-2 px-2 text-sm  text-blue-800 hover:text-gray-900 hover:bg-blue-900">
+            <Link to={routes.home()} className="block transition duration-500 transform px-2 pt-2 m-0 bg-teal-400 hover:bg-indigo-400
+               border-2 border-blue-500 hover:border-orange-500
+               hover:text-white
+               hover:opacity-50
+               hover:shadow-md
+               hover:scale-95">
               <HomeIcon className="h-4 w-4" />
                 Home
             </Link>
               {isAdmin && (
-            <Link to={routes.admin()} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+            <Link to={routes.admin()} className="block py-2 px-2 text-sm text-blue-800 hover:text-blue-100 hover:bg-blue-900">
               <UserGroupIcon className="h-4 w-4" />
                 Admin
             </Link>
         )}
 
         {isAuthenticated && (
-            <Link to={routes.profile({ id: currentUser.id })} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+            <Link to={routes.profile({ id: currentUser.id })} className="block py-2 px-2 text-sm text-blue-800 hover:text-blue-100 hover:bg-blue-900">
               <UserCircleIcon className="h-4 w-4" />
                 Profile
             </Link>
         )}
-            <Link to={routes.about()} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+            <Link to={routes.about()} className="block py-2 px-2 text-sm text-blue-800 hover:text-blue-100 hover:bg-blue-900">
               <InformationCircleIcon className="h-4 w-4" />
                 About
             </Link>
-            <Link to={routes.contact()} className="block py-2 px-2 text-sm text-blue-800 hover:text-gray-900">
+            <Link to={routes.contact()} className="block py-2 px-2 text-sm text-blue-800 hover:text-blue-100 hover:bg-blue-900">
               <ChatBubbleLeftIcon className="h-4 w-4" />
                 Contact
             </Link>
