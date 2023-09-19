@@ -14,7 +14,7 @@ const LoginPage = () => {
         navigate(routes.admin())
       } else if (currentUser.profile) {  // This assumes you have a 'profile' field to check.
         navigate(routes.profile({ id: currentUser.id }))
-      } else {
+      } else if (!currentUser) {
         navigate(routes.newProfile())
       }
     }
